@@ -1,2 +1,3 @@
 # node-weather
-weather app
+---
+Nodejs based weather app
