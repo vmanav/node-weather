@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>WeatherItIs</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Caveat:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:500i&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container main">
+
+        <div class="container pt-4">
+
+            <form action="/" method="POST">
+
+                <div class="form-group text-center" style="font-family:'Roboto Mono', monospace;">
+                    <input name="city" type="text" class="form-control" placeholder="ENTER A CITY" required
+                        style="width:70%; margin:auto;padding-left: 30%;">
+                    <small id="emailHelp" class="form-text text-muted">Must be a valid city name.</small>
+                    <button type="submit" id="submitButton" class="btn btn-outline-success mt-4"
+                        style="margin: auto;font-size: 24px;font-family:'Caveat', cursive;">Get
+                        Weather</button>
+                </div>
+
+            </form>
+        </div>
+
+        <% if(weather !== null){ %>
+        <div class="jumbotron mx-auto shadow p-3 bg-white rounded" style="width: 70%">
+            <p><%= weather %></p>
+        </div>
+        <% } %>
+
+        <% if(error !== null){ %>
+        <div class="jumbotron mx-auto shadow p-3 bg-white roundedcl alert alert-danger" style="width: 70%">
+            <p><%= error %></p>
+        </div>
+        <% } %>
+
+    </div>
+</body>
+
+</html>
