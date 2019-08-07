@@ -4,6 +4,8 @@ const app = express()
 
 const apiKey = '1b8975e74fb3966da59cd7d3b51ccbf8';
 
+const PORT = process.env.PORT || 3000;
+
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
@@ -43,6 +45,6 @@ app.post('/', (req, res) => {
 
 })
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('Running on : http://localhost:3000/')
 })
