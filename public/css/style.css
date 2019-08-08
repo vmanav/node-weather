@@ -11,3 +11,7 @@ body {
 .jumbotron {
     font-family: 'Roboto Mono', monospace;
 }
+
+.inverted {
+    filter: invert(1)
+}

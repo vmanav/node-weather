@@ -31,14 +31,17 @@ app.post('/', (req, res) => {
         }
         else {
             let weather = JSON.parse(body)
+            // console.log(weather)
+            // console.log('------------')
             if (weather.main == undefined) {
                 // case2
                 res.render('index', { weather: null, error: 'Error, Input isn’t a valid city.' })
             }
             else {
                 // case3
+                let description =weather.weather[0].description
                 let status = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-                res.render('index', { weather: status, error: null })
+                res.render('index', { weather: status, weatherD: description, error: null })
             }
         }
     });

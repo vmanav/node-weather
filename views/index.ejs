@@ -5,19 +5,47 @@
     <meta charset="utf-8">
     <title>WeatherItIs</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- my script -->
     <script src="/js/script.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- font awesome 5 kit script -->
+    <script src="https://kit.fontawesome.com/e00a1e7cf5.js"></script>
+
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
     <link href="https://fonts.googleapis.com/css?family=Caveat:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:500i&display=swap" rel="stylesheet">
+
 
 </head>
 
 <body>
     <div class="container main">
+
+        <div class="container pt-5 pb-5 d-flex flex-row justify-content-center" id="heading">
+            <i id="icon1" class="fas fa-5x ml-1 mr-1 p-3 shadow bg-transparent rounded fa-temperature-high"
+                data-action="h"></i>
+            <i id="icon2" class="fas fa-5x ml-1 mr-1 p-3 shadow bg-transparent rounded fa-sun fa-spin inverted"
+                data-action="h"></i>
+            <i id="icon3" class="fas fa-5x ml-1 mr-1 p-3 shadow bg-transparent rounded fa-cloud" data-action="h"></i>
+            <i id="icon4" class="fas fa-5x ml-1 mr-1 p-3 shadow bg-transparent rounded fa-cloud-sun-rain"
+                data-action="h"></i>
+            <i id="icon5" class="fas fa-5x ml-1 mr-1 p-3 shadow bg-transparent rounded fa-wind" data-action="h"></i>
+            <i id="icon6" class="fas fa-5x ml-1 mr-1 p-3 shadow bg-transparent rounded fa-cloud-showers-heavy"
+                data-action="h"></i>
+            <i id="icon7" class="fas fa-5x ml-1 mr-1 p-3 shadow bg-transparent rounded fa-bolt" data-action="h"></i>
+            <i id="icon8" class="fas fa-5x ml-1 mr-1 p-3 shadow bg-transparent rounded fa-snowflake fa-spin inverted"
+                data-action="h"></i>
+            <i id="icon9" class="fas fa-5x ml-1 mr-1 p-3 shadow bg-transparent rounded fa-temperature-low"
+                data-action="h"></i>
+        </div>
+
 
         <div class="container pt-4">
 
@@ -25,7 +53,7 @@
 
                 <div class="form-group text-center" style="font-family:'Roboto Mono', monospace;">
                     <input name="city" type="text" class="form-control" placeholder="ENTER A CITY" required
-                        style="width:70%; margin:auto;padding-left: 30%;">
+                        style="width:70%; margin:auto;padding-left: 30%;" id="input">
                     <small id="emailHelp" class="form-text text-muted">Must be a valid city name.</small>
                     <button type="submit" id="submitButton" class="btn btn-outline-success mt-4"
                         style="margin: auto;font-size: 24px;font-family:'Caveat', cursive;">Get
@@ -38,11 +66,12 @@
         <% if(weather !== null){ %>
         <div class="jumbotron mx-auto shadow p-3 bg-white rounded" style="width: 70%">
             <p><%= weather %></p>
+            <span class="badge badge-pill badge-info" style="font-size: 1em"><%= weatherD %></span>
         </div>
         <% } %>
 
         <% if(error !== null){ %>
-        <div class="jumbotron mx-auto shadow p-3 bg-white roundedcl alert alert-danger" style="width: 70%">
+        <div class="jumbotron mx-auto shadow p-3 bg-white rounded alert alert-danger" style="width: 70%">
             <p><%= error %></p>
         </div>
         <% } %>
